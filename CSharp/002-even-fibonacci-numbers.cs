@@ -1,10 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-namespace ExercisesProject.ExercisesB
+namespace ProjectEuler
 {
     class _002_SumEvenFibonacciNumbers
     {
@@ -18,14 +17,16 @@ namespace ExercisesProject.ExercisesB
          By considering the terms in the Fibonacci sequence whose values do 
          not exceed four million, find the sum of the even-valued terms.
          */
-        public static void Run()
+
+        static void Main(string[] args)
         {
             int result = 0;
 
             int fn_1 = 1;
             int fn_2 = 1;
+            long n = Convert.ToInt64(Console.ReadLine());
 
-            while ( fn_1 <= 4000000 )
+            while ( fn_1 <= n )
             {
                 if (fn_1 % 2 == 0)
                     result += fn_1;
@@ -36,9 +37,11 @@ namespace ExercisesProject.ExercisesB
             }
 
             Console.WriteLine(
-                "Sum of even fibonacci numbers below 4 million is: " + result);
+                "Sum of even fibonacci numbers below " + n + " is: " + result);
 
             Console.ReadKey();
         }
+
     }
 }
+
