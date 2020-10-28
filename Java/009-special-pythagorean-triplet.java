@@ -17,7 +17,7 @@ class PythagoreanTripletProduct {
                 c = sum - b - a;
                 // check if a^2 + b^2 = c^2
                 if (Math.pow(a, 2) + Math.pow(b, 2) == Math.pow(c, 2)) {
-                    System.out.println("The Pythagorean triple is " + a + ", " + b + ", " + c + " and the sum is " + s);
+                    System.out.println("The Pythagorean triple is " + a + ", " + b + ", " + c + " and the sum is " + sum);
                     System.out.println("The product abc is: " + (a*b*c));
                     break;
                 }
