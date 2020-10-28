@@ -4,22 +4,10 @@ class Solution
   {
     long sum = 0 ;
       
-    //Adding all multiples of 3
-    for(long i = 3 ; i < 1000 ; i+=3)
+      for(long i = 1 ; i < 1000 ; i++) 
     {
-      sum+=i;
-    }
-
-    //Adding all multiples of 5
-    for(long i = 5 ; i < 1000 ; i+=5)
-    {
-      sum+=i;
-    }       
-
-    //Removing all multiples of 3 AND 5 i.e 15
-    for(long i = 15 ; i < 1000 ; i+=15)
-    {
-      sum-=i;
+    	if((i % 3 == 0 || i % 5 == 0))
+        sum+=i;
     }
     
     return sum;
