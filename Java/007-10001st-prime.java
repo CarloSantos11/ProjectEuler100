@@ -26,7 +26,7 @@ public class The10001stPrime{
 	// Variable prime tracks the actual number at the nth position
         while (prime_pos < num) {
             prime++;
-	    // Loop that incrementes through nth positions when the isPrime() method returns true
+	    // If number is prime, increment through nth positions
             if (isPrime(prime)) {
                 prime_pos++;
             }
