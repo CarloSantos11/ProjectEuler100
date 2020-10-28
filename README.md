@@ -13,6 +13,7 @@ Why not join us?
 ## Other Languages (contributers)
 - Ruby
 - Java
+- C++
 - C#
 - Go
 
