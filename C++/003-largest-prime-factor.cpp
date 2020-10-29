@@ -10,7 +10,7 @@
 using namespace std;
 
 int main(){
-    int limit, maxPrimeFactor, i;
+    long limit, maxPrimeFactor, i;
     cin >> limit;
     /*
     First divide the number by 2 for highest possible times in order to reduce it.
