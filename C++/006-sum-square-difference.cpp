@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    int n=100, sumSqr=0, sqrSum = 0, sum=0, result=0;
+    int n=100, sumSqr=0, sqrSum = 0, sum=0;
    if(n<=0){
       cout<<"Invalid value of n";
    }
@@ -18,6 +18,7 @@ int main()
         }
         //The square of the sum 
         sqrSum = pow(sum,2);
-        result = sqrSum-sumSqr;
+        int result = sqrSum-sumSqr;
+        cout<<"Result is: "<<result;
    }
 }
