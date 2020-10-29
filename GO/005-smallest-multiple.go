@@ -35,7 +35,9 @@ func main() {
         
         var num int    
         fmt.Scanln(&num) 
-
+	// Or set custom value for testing
+	// num = 20
+	
 	for j := 2; j <= num; j++ {
 		result = LCM(result, j)
 	}
