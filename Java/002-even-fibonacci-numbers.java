@@ -7,25 +7,36 @@
  **/
 
 class Solution {
-    static int MAX_NUMBER = 4000000;
-
-    public static long fiboEvenSum() {
-        int b = 1;
-        int c = 2, d;
+    public static long fiboEvenSum(int maxNumber) {
+        int currentSequence = 1;        // Currently considering fibonacci sequence
+        int nextSequence;               // Next fibonacci sequence
+        int currentEvenSequence = 2;    // Currently considering fibonacci even-valued sequence
         long sum = 0;
 
-        //calculate the sum of even-valued in Fibonacci sequence not exceed 4,000,000
-        while (c < MAX_NUMBER) {
-            sum += c;
-            d = b + (c << 0x01);
-            c = d + b + c;
-            b = d;
+        // loop to calculate the sum of even-valued in Fibonacci sequence not exceed maxNumber
+        // ex:
+        //   consider, currentSequence = 5
+        //   then, nextSequence = 21
+        //   then, currentEvenSequence = 34;
+        while (currentEvenSequence < maxNumber) {
+
+            // calculate the sum of even sequence
+            sum += currentEvenSequence;
+
+            // calculate next sequence [current fibonacci sequence + (current fibonacci even valued sequence * 2)]
+            nextSequence = currentSequence + (currentEvenSequence * 2);
+
+            // calculate the next even valued sequence
+            currentEvenSequence = nextSequence + currentSequence + currentEvenSequence;
+
+            // consider current sequence as calculated new sequence
+            currentSequence = nextSequence;
         }
         return sum;
     }
 
     public static void main(String[] args) {
-        long sum = fiboEvenSum();
+        long sum = fiboEvenSum(4000000);
         System.out.println(sum);
     }
 }
