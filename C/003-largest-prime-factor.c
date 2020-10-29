@@ -8,9 +8,21 @@
 #include<stdio.h>
 #include<math.h>
 
+int prime(int number){  //For letting in only prime numbers inside loop
+    for (int i=3; i<=number/2; ++i){
+        if(!(number % i == 0)){
+            return 1;
+        }
+        else{
+            return 0;
+            break;
+        }
+    }
+}
+
 int main(){
-    int limit, maxPrimeFactor, i;
-    scanf("%d", &limit);
+    long limit, maxPrimeFactor, i;
+    scanf("%ld", &limit);
     /*
     First divide the number by 2 for highest possible times in order to reduce it.
     */
@@ -22,14 +34,16 @@ int main(){
     It is a convention that the prime factor would always be less than or equal to square root of the number 
     */
     for(i=3; i <= sqrt(limit); i = i+2){  //Increment by 2 for getting only odd numbers
-        while(limit % i == 0){
-            maxPrimeFactor = i;
-            limit /= i;
+        if(prime(i)){
+            while(limit % i == 0){
+                maxPrimeFactor = i;
+                limit /= i;
+            }
         }
     }
-    if(limit > 2){  //Ensuring the remainder to be 1, so do a final check whether the last updated value of limit is greater that 2
+    if(limit > 2 && prime(limit)){
         maxPrimeFactor = limit;
     }
-    printf("%d", maxPrimeFactor);
+    printf("%ld", maxPrimeFactor);
     return 0;
 }
