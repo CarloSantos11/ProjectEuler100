@@ -13,7 +13,7 @@ def fiboEvenSum(number)
 		temp = fiboDigit
 		fiboDigit += previousDigit
 		previousDigit = temp
-		
+    
 		sum += fiboDigit if fiboDigit % 2 == 0
 	end 
 	sum
