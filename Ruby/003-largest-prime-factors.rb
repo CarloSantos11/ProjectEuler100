@@ -1,7 +1,7 @@
 # The prime factors of 13195 are 5, 7, 13 and 29.
 # What is the largest prime factor of the given number? 
 
-def largestPrimeFactor(number)
+def largest_prime_factor(number)
   # divide by the smallest prime number (2) until
   # number is no longer divisble by the given prime number
 
@@ -23,4 +23,4 @@ def largestPrimeFactor(number)
   prime_number
 end
 
-puts largestPrimeFactor(600851475143)
+puts largest_prime_factor(600851475143)
